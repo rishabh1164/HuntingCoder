@@ -1,10 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import Script from "next/script";
 import localFont from "next/font/local";
 import styles from "@/styles/Home.module.css";
-import Link from "next/link";
-import Dummy from "@/components/Dummy";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,54 +28,20 @@ export default function Home() {
       <div
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
-        <nav className={styles.mainnav}>
-          <ul>
-            <Link href="/">
-              <li>Home</li>
-            </Link>
-            <Link href="/blog">
-              <li>Blog</li>
-            </Link>
-            <Link href="/about">
-              <li>About</li>
-            </Link>
-            <Link href="/contact">
-              <li>Contact</li>
-            </Link>
-          </ul>
-        </nav>
+       
         <main className={styles.main}>
-          <Dummy />
-          <style jsx>
+          {/* <style jsx>
             {`
               .mySpan {
                 color: blue;
               }
             `}
-          </style>
+          </style> */}
           <h1>
-            <span className="mySpan dummy">Hunting Coder</span>
+            <span>Hunting Coder</span>
           </h1>
           <p>A blog for hunting coders by a hunting coder</p>
-          <div className={styles.blogs}>
-            <h2>Popular Blogs</h2>
-            <div className={styles.blogItem}>
-              <h3>how to learn javascript in 2024</h3>
-              <p>JavaScript is a language used to design logic for the web</p>
-            </div>
-            <div className={styles.blogItem}>
-              <h3>how to learn javascript in 2024</h3>
-              <p>JavaScript is a language used to design logic for the web</p>
-            </div>
-            <div className={styles.blogItem}>
-              <h3>how to learn javascript in 2024</h3>
-              <p>JavaScript is a language used to design logic for the web</p>
-            </div>
-            <div className={styles.blogItem}>
-              <h3>how to learn javascript in 2024</h3>
-              <p>JavaScript is a language used to design logic for the web</p>
-            </div>
-          </div>
+         
         </main>
         <footer className={styles.footer}>
           <a

@@ -167,8 +167,12 @@ a.secondary {
   }
 }
 
+.mainnav {
+  margin: 40px 0px;
+}
 .mainnav ul{
  display: flex;
+ justify-content: center;
 }
 
 .mainnav ul li {
@@ -179,6 +183,3 @@ a.secondary {
   font-weight: bold;
 }
 
-.blogs .blogItem {
-  margin: 15px 0;
-}
