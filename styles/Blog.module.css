@@ -1,7 +1,9 @@
 .blogs .blogItem {
     margin: 15px 0;
   }
-
+.blogItem p {
+  max-width: 40vw;
+}
 .main {
     min-height: 100vh;
     flex: 1;
