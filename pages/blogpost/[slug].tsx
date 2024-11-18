@@ -4,20 +4,14 @@ import styles from "../../styles/Blogpost.module.css";
 
 // Step 1: find the file corresponding to slug
 // Step 2: Populate them inside the page
-const slug = () => {
-  const router = useRouter();
-  const { slug } = router.query;
-  const [blog, setBlog] = useState<any>({});
+const slug = (props : any) => {
+  // const router = useRouter();
+  // const { slug } = router.query;
+  const [blog, setBlog] = useState<any>(props.myBlog);
 
-  useEffect(() => {
-    fetch(`http://localhost:3000/api/getblog?slug=${slug}`)
-      .then((a) => {
-        return a.json();
-      })
-      .then((parsed) => {
-        setBlog(parsed);
-      });
-  }, []);
+  // useEffect(() => {
+    
+  // }, []);
 
   return (
     <div className={styles.container}>
@@ -30,4 +24,13 @@ const slug = () => {
     </div>
   );
 };
+export async function getServerSideProps(context: any) {
+    const { slug } = context.query;
+    let data =  await fetch(`http://localhost:3000/api/getblog?slug=${slug}`)
+     let myBlog = await data.json();
+  return {
+    props: {myBlog}
+  }
+  
+}
 export default slug;
