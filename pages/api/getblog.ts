@@ -11,7 +11,6 @@ export default function handler(
   res: NextApiResponse<Data>,
 ) {
   fs.readFile(`blogdata/${req.query.slug}.json`,'utf-8', (err,data) => {
-
     if(err) {
      res.status(500).json({error: 'No such blog found'}); 
     } else {

@@ -6,10 +6,6 @@ import Link from 'next/link';
 // Step 2: Iterate through them and Display them 
 const blog = (props: any) => {
   const [blogs, setBlogs] = useState(props.allBlogs);
-  // useEffect(() => {
-   
-
-  // }, []);
 
   return (
     <main className={styles.main}>
@@ -22,7 +18,7 @@ const blog = (props: any) => {
         <Link href={`/blogpost/${blogItem?.slug}`}>
         <h3>{blogItem?.title}</h3>
         </Link>
-        <p>{blogItem.content.substr(0,140)}...</p>
+        <p>{blogItem.metadesc.substr(0,140)}...</p>
       </div>
       })}
       </div>
