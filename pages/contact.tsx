@@ -45,17 +45,19 @@ const contact = () => {
   };
   return (
     <form onSubmit={handleSubmit} className={styles.container}>
+      <h1>Contact Us</h1>
       <div className={styles.mb3}>
         <label htmlFor="name" className={styles.formlabel}>
           Enter Your Name
         </label>
         <input
           type="name"
-          className="form-control"
+          className={styles.input}
           name="name"
           id="name"
           value={formDetails.name}
           onChange={handleChange}
+          required
         />
       </div>
       <div className={styles.mb3}>
@@ -64,13 +66,14 @@ const contact = () => {
         </label>
         <input
           type="email"
-          className="form-control"
+          className={styles.input}
           id="email"
           name="email"
           value={formDetails.email}
           onChange={handleChange}
+          required
         />
-        <div id="emailHelp" className="form-text">
+        <div id="emailHelp" className={styles.formtext}>
           We'll never share your email with anyone else.
         </div>
       </div>
@@ -80,7 +83,7 @@ const contact = () => {
         </label>
         <input
           type="phone"
-          className="form-control"
+          className={styles.input}
           name="phone"
           id="phone"
           value={formDetails.phone}
@@ -93,25 +96,25 @@ const contact = () => {
         </label>
         <input
           type="password"
+          className={styles.input}
           name="password"
-          className="form-control"
           id="password"
           value={formDetails.password}
           onChange={handleChange}
+          required
         />
       </div>
       <div className={styles.mb3}>
-        <label htmlFor="desc">Elaborate your concerns</label>
+        <label htmlFor="desc" className={styles.formlabel}>Elaborate your concerns</label>
         <textarea
-          className="form-control"
-          placeholder="write your concern here"
+          className={styles.input}
           name="desc"
           id="desc"
           value={formDetails.desc}
           onChange={handleChange}
         ></textarea>
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className={styles.btn}>
         Submit
       </button>
     </form>
